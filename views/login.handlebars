@@ -1,0 +1,45 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Login</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <form class="form login-form">
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label for="username-login">Username</label>
+            <input type="text" class="form-control" placeholder="Username" id="username-login" required
+              data-validation-required-message="Please enter your username.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="password-login">Password</label>
+            <input type="password" class="form-control" placeholder="Password" id="password-login" required
+              data-validation-required-message="Please enter your password.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+      </form>
+      <hr>
+      <p>Or signup <a href="/signup">here</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="./js/login.js"></script>

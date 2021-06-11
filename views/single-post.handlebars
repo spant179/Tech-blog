@@ -1,0 +1,56 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/img/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Post</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="post-preview">
+        <h2 class="post-title">
+          {{post.title}}
+        </h2>
+        <p class="post-content">
+          {{post.post_content}}
+        </p>
+        <p class="post-meta">Posted by {{post.user.username}}
+          on {{format_date post.date_created}}
+        </p>
+      </div>
+      <h3>Comments:</h3>
+      {{#each post.comments}}
+      <hr>
+      <p class="comment-meta">{{user.username}}
+        on {{format_date date_created}}
+      </p>
+      <p>{{comment_content}}</p>
+      {{/each}}
+      <hr>
+      {{#if logged_in}}
+      <h3>Leave a comment:</h3>
+      <form class="form comment-form" data-id={{post.id}}>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label for="comment">Comment:</label>
+            <textarea type="text" class="form-control" rows="5" id="comment" name="comment"></textarea>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<script src="/js/comment.js"></script>
